@@ -8,10 +8,12 @@ const userInput = () => {
             console.error('Invalid input! Please enter again.')
             userInput()
         } else {
-            let randomNum = []
-            for (let i = 0; i < 10; i++) {
-                randomNum.push(Math.floor(Math.random() * 10) + 1)
+            let num = new Set()
+            while(num.size < 10) {
+                num.add(Math.floor(Math.random() * 10) + 1)
             }
+            const randomNum = [...num]
+            
             console.log('Spinning...')
 
             randomNum.forEach((val, index) => {
